@@ -1,0 +1,19 @@
+/* ---------- 1  Twin suns: a big sun on the left, a smaller cooler one on the right ---------- */
+html[data-bg="1"] .bg .sun {
+  background:
+    radial-gradient(circle at 0 62%, rgba(255, 150, 70, .5) 0, rgba(255, 60, 172, .28) calc(var(--sz) * .62), transparent calc(var(--sz) * 1.25)),
+    radial-gradient(circle at 100% 28%, rgba(255, 60, 172, .42) 0, rgba(130, 45, 220, .26) calc(var(--sz) * .5), transparent calc(var(--sz) * .95));
+}
+html[data-bg="1"] .bg::before, html[data-bg="1"] .bg::after {
+  border-radius: 50%;
+  -webkit-mask-image: linear-gradient(180deg, #000 0 50%, transparent 50% 52%, #000 52% 60%, transparent 60% 63%, #000 63% 70%, transparent 70% 74%, #000 74% 80%, transparent 80% 85%, #000 85% 89%, transparent 89% 95%, #000 95%);
+  mask-image: linear-gradient(180deg, #000 0 50%, transparent 50% 52%, #000 52% 60%, transparent 60% 63%, #000 63% 70%, transparent 70% 74%, #000 74% 80%, transparent 80% 85%, #000 85% 89%, transparent 89% 95%, #000 95%);
+}
+html[data-bg="1"] .bg::before {
+  left: calc(var(--sz) * -.5); top: calc(62% - var(--sz) * .5); width: var(--sz); height: var(--sz);
+  background: linear-gradient(180deg, #ffd45a 0, #ff9a3c 30%, #ff3cac 66%, #b12bd6 100%);
+}
+html[data-bg="1"] .bg::after {
+  right: calc(var(--sz) * -.36); top: calc(28% - var(--sz) * .36); width: calc(var(--sz) * .72); height: calc(var(--sz) * .72);
+  background: linear-gradient(180deg, #ffa6d6 0, #ff3cac 45%, #6f2bd6 100%);
+}

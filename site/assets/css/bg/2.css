@@ -1,0 +1,30 @@
+/* ---------- 2  Neon rails: vertical light tubes down both edges ---------- */
+html[data-bg="2"] .bg .sun {
+  background: linear-gradient(90deg, rgba(255, 60, 172, .2), transparent 20%), linear-gradient(270deg, rgba(255, 154, 60, .16), transparent 20%);
+}
+html[data-bg="2"] .bg .floor {
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 60, 172, .5), transparent) 12px 0 / 40px 100% no-repeat,
+    linear-gradient(#ffd0ea, #ffd0ea) 30px 0 / 3px 100% no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 154, 60, .45), transparent) calc(100% - 52px) 0 / 40px 100% no-repeat,
+    linear-gradient(#ffe0b8, #ffe0b8) calc(100% - 33px) 0 / 3px 100% no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, transparent 3%, #000 20%, #000 72%, transparent 97%);
+  mask-image: linear-gradient(180deg, transparent 3%, #000 20%, #000 72%, transparent 97%);
+}
+html[data-bg="2"] .bg .hz {
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 154, 60, .4), transparent) 36px 0 / 40px 100% no-repeat,
+    linear-gradient(#ff9a3c, #ff9a3c) 56px 0 / 2px 100% no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 60, 172, .4), transparent) calc(100% - 76px) 0 / 40px 100% no-repeat,
+    linear-gradient(#ff3cac, #ff3cac) calc(100% - 58px) 0 / 2px 100% no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, transparent 28%, #000 46%, #000 90%, transparent 99%);
+  mask-image: linear-gradient(180deg, transparent 28%, #000 46%, #000 90%, transparent 99%);
+}
+html[data-bg="2"] .bg::before {
+  inset: 0;
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 60, 172, .75) 0 6px, transparent 6px 20px) 82px 0 / 2px 100% no-repeat,
+    repeating-linear-gradient(180deg, rgba(255, 154, 60, .75) 0 6px, transparent 6px 20px) calc(100% - 84px) 0 / 2px 100% no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, transparent 10%, #000 40%, #000 60%, transparent 92%);
+  mask-image: linear-gradient(180deg, transparent 10%, #000 40%, #000 60%, transparent 92%);
+}

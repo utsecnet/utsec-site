@@ -1,0 +1,18 @@
+/* ---------- 3  Grid corridor: perspective grid walls leaning in from both sides ---------- */
+html[data-bg="3"] .bg .sun {
+  background: radial-gradient(ellipse at 0 50%, rgba(255, 60, 172, .3), transparent 45%), radial-gradient(ellipse at 100% 50%, rgba(255, 154, 60, .24), transparent 45%);
+}
+html[data-bg="3"] .bg .floor, html[data-bg="3"] .bg .hz {
+  top: -10%; bottom: -10%; width: min(44vw, 640px); background-size: 56px 56px;
+}
+html[data-bg="3"] .bg .floor {
+  left: 0; right: auto; transform-origin: 0 50%; transform: perspective(760px) rotateY(64deg);
+  background-image: linear-gradient(rgba(255, 60, 172, .6) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 60, 172, .6) 1px, transparent 1px);
+  -webkit-mask-image: linear-gradient(90deg, #000 0, transparent 92%); mask-image: linear-gradient(90deg, #000 0, transparent 92%);
+}
+html[data-bg="3"] .bg .hz {
+  right: 0; left: auto; transform-origin: 100% 50%; transform: perspective(760px) rotateY(-64deg);
+  background-image: linear-gradient(rgba(255, 154, 60, .55) 1px, transparent 1px), linear-gradient(270deg, rgba(255, 154, 60, .55) 1px, transparent 1px);
+  background-position: 100% 0;
+  -webkit-mask-image: linear-gradient(270deg, #000 0, transparent 92%); mask-image: linear-gradient(270deg, #000 0, transparent 92%);
+}

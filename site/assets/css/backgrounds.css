@@ -1,0 +1,34 @@
+/* Page backgrounds. Static: nothing is animated, nothing loads from outside this site.
+   assets/js/bg.js picks one of the 17 designs at random for each browsing session, sets <html data-bg="N"> and loads only
+   assets/css/bg/N.css. Add #bg=N to any page address (for example index.html#bg=7) to look at a particular one.
+   Colour: pink #ff3cac, orange #ff9a3c and violet #a566ff throughout; options 11 to 17 (Neo Tokyo) also use cyan #19e3ff and signal red #ff4a3d.
+   Rules shared by every design:
+   - no horizon line
+   - colour lives only in the outer edges; the middle reading area stays smooth and dark
+   - the whole .bg layer is masked so the art fades out before it reaches the text column
+   - html[data-bg] --k narrows that edge band for busier designs */
+
+html[data-bg] { --ee: calc(var(--e) * var(--k, 1)); --e: 26%; --sz: clamp(160px, min(40vmin, 24vw), 440px); }
+@media (max-width: 1279px) { html[data-bg] { --e: 18%; } }
+@media (max-width: 899px)  { html[data-bg] { --e: 12%; } }
+@media (max-width: 559px)  { html[data-bg] { --e: 8%; } }
+/* On small screens the text runs nearly edge to edge, so the art is dimmed and kept to a thin strip. */
+@media (max-width: 899px)  { html[data-bg] .bg { opacity: .8; } html[data-theme="darker"][data-bg] .bg { opacity: .55; } }
+@media (max-width: 559px)  { html[data-bg] .bg { opacity: .6; } html[data-theme="darker"][data-bg] .bg { opacity: .42; } }
+
+html[data-bg] .bg {
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(var(--ee) * .55), transparent var(--ee), transparent calc(100% - var(--ee)), #000 calc(100% - var(--ee) * .55), #000 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(var(--ee) * .55), transparent var(--ee), transparent calc(100% - var(--ee)), #000 calc(100% - var(--ee) * .55), #000 100%);
+}
+html[data-theme="darker"][data-bg] .bg { opacity: .62; }
+
+/* Clear everything the current background sets, then each option builds on a clean layer. */
+html[data-bg] .bg .sun, html[data-bg] .bg .floor, html[data-bg] .bg .hz {
+  position: absolute; display: block; inset: 0; width: auto; height: auto; opacity: 1 !important;
+  background: none; box-shadow: none; transform: none; border: 0; -webkit-mask-image: none; mask-image: none;
+}
+html[data-bg] .bg::before, html[data-bg] .bg::after { content: ""; position: absolute; display: block; pointer-events: none; }
+
+/* With JavaScript off no design is chosen, so show a plain dark page rather than the old horizon-line background. */
+.bg .sun, .bg .floor, .bg .hz { display: none; }
+html[data-bg] .bg .sun, html[data-bg] .bg .floor, html[data-bg] .bg .hz { display: block; }

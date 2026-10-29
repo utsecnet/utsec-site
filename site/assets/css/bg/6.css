@@ -1,0 +1,21 @@
+/* ---------- 6  Soft glow: large blurred washes of colour and a faint dot texture, the quietest option ---------- */
+html[data-bg="6"] .bg .sun {
+  background:
+    radial-gradient(ellipse 34% 60% at 0 36%, rgba(255, 60, 172, .46), transparent 74%),
+    radial-gradient(ellipse 30% 56% at 100% 72%, rgba(255, 154, 60, .4), transparent 74%),
+    radial-gradient(ellipse 26% 42% at 100% 0, rgba(138, 60, 255, .42), transparent 72%),
+    radial-gradient(ellipse 26% 42% at 0 100%, rgba(138, 60, 255, .38), transparent 72%);
+}
+html[data-bg="6"] .bg .floor {
+  background: radial-gradient(circle, rgba(255, 235, 248, .5) 0 1px, transparent 1.6px) 0 0 / 24px 24px;
+  -webkit-mask-image: linear-gradient(180deg, transparent 4%, #000 30%, #000 70%, transparent 96%);
+  mask-image: linear-gradient(180deg, transparent 4%, #000 30%, #000 70%, transparent 96%);
+  opacity: .5 !important;
+}
+html[data-bg="6"] .bg .hz {
+  background:
+    linear-gradient(90deg, #ffd0ea 0 2px, rgba(255, 60, 172, .5) 2px 3px, transparent 3px) 0 0 / 100% 100% no-repeat,
+    linear-gradient(270deg, #ffe0b8 0 2px, rgba(255, 154, 60, .5) 2px 3px, transparent 3px) 0 0 / 100% 100% no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, transparent 2%, #000 24%, #000 76%, transparent 98%);
+  mask-image: linear-gradient(180deg, transparent 2%, #000 24%, #000 76%, transparent 98%);
+}

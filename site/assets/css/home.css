@@ -1,0 +1,66 @@
+/* Home page (About Me). Built on the tokens in style.css; scoped by body.hm. */
+.hm h1 { font-size: clamp(36px, 5vw, 58px); }
+.hm .hm-h { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--acc2); font-weight: 800; margin: 0 0 16px; line-height: 1.3; text-shadow: none; }
+.hm section { padding: 34px 0; }
+.hm-lede { font-size: 19px; color: var(--mut); max-width: 64ch; text-shadow: 0 1px 10px rgba(var(--shade), .85); }
+h1 + .hm-lede { margin-top: 16px; }
+
+/* shared pieces */
+.hm-list { list-style: none; display: grid; gap: 11px; }
+.hm-list li { position: relative; padding-left: 20px; color: var(--ink); line-height: 1.4; }
+.hm-list li::before { content: ""; position: absolute; left: 1px; top: .5em; width: 7px; height: 7px; background: var(--acc); box-shadow: 0 0 8px var(--acc); transform: rotate(45deg); }
+.hm-list small { display: block; color: var(--mut); font-size: 14px; margin-top: 2px; }
+.hm-stat { padding: 18px 20px; }
+.hm-stat b { display: block; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.1; font-weight: 800; background: linear-gradient(90deg, var(--acc), var(--acc2)); -webkit-background-clip: text; background-clip: text; color: transparent; overflow-wrap: anywhere; }
+.hm-stat span { display: block; color: var(--mut); font-size: 14px; margin-top: 7px; line-height: 1.4; }
+.hm-links { display: flex; gap: 10px; flex-wrap: wrap; list-style: none; }
+.hm-links a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: rgba(var(--shade), .6); color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; }
+.hm-links a:hover { border-color: var(--acc); color: #fff; }
+.hm-links svg { width: 18px; height: 18px; color: var(--acc); flex: none; }
+.hm-photo { max-width: 100%; margin: 0; }
+.hm-photo figcaption { font-size: 14px; }
+.hm-yr { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--acc2); font-weight: 700; display: block; }
+
+/* ---------- B: credential band ---------- */
+.hm-b .hm-hero { padding: 56px 0 36px; }
+.hm-b .hm-band { border-block: 1px solid var(--line); background: rgba(var(--shade), .62); }
+.hm-b .hm-band .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hm-b .hm-band .wrap > div { padding: 20px 22px; border-left: 1px solid var(--line); }
+.hm-b .hm-band .wrap > div:first-child { border-left: 0; padding-left: 0; }
+.hm-b .hm-band b { display: block; font-size: 22px; font-weight: 800; color: #fff; line-height: 1.25; }
+.hm-b .hm-band span { display: block; margin-top: 4px; font-size: 12px; line-height: 1.4; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mut); }
+.hm-b .hm-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+.hm-b .hm-two .card { padding: 24px; }
+.hm-b .hm-two .card .hm-h { margin-bottom: 14px; }
+.hm-b .hm-steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; }
+.hm-b .hm-steps li { position: relative; border-top: 2px solid var(--line); padding-top: 20px; }
+.hm-b .hm-steps li::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 12px var(--acc); }
+.hm-b .hm-steps b { display: block; font-size: 18px; line-height: 1.25; margin: 4px 0 6px; }
+.hm-b .hm-steps p { color: var(--mut); font-size: 15px; line-height: 1.55; }
+.hm-b .hm-family .hm-lede { font-size: 17px; }
+.hm-b .hm-family { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 32px; align-items: center; }
+@media (max-width: 860px) {
+  .hm-b .hm-band .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-b .hm-band .wrap > div:nth-child(3) { border-left: 0; padding-left: 0; }
+  .hm-b .hm-band .wrap > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .hm-b .hm-two, .hm-b .hm-family { grid-template-columns: 1fr; }
+  .hm-b .hm-steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) { .hm-b .hm-steps { grid-template-columns: 1fr; } }
+
+/* ---------- shared: calmer portrait, hero, stats ---------- */
+.hm h1 { text-shadow: 0 0 18px rgba(255, 60, 172, .22); letter-spacing: -1px; }
+.hm .eyebrow { font-size: 13px; letter-spacing: 3px; margin-bottom: 12px; }
+.hm .frame { border: 1px solid rgba(255, 60, 172, .5); padding: 0; border-radius: 14px; overflow: hidden; background: var(--bg2); box-shadow: 0 10px 34px rgba(0, 0, 0, .4); }
+.hm .frame:after { content: none; }
+.hm .frame img { display: block; border-radius: 0; }
+.hm-hero .wrap { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; align-items: center; }
+@media (max-width: 700px) { .hm-hero .wrap { grid-template-columns: 1fr; gap: 22px; } .hm-hero .frame { max-width: 150px; } }
+.hm-stats { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hm-stats.s4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 860px) { .hm-stats.s4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .hm-stats, .hm-stats.s4 { grid-template-columns: 1fr; } }
+.hm-photo figcaption { color: var(--mut); font-size: 14px; padding: 10px 6px 2px; }
+.hm-photo .zoom img { display: block; }
+@media (max-width: 560px) { .hm .eyebrow { font-size: 12px; letter-spacing: 2px; } }
+.hm-links-row { margin-top: 22px; }
