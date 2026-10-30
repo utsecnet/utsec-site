@@ -387,3 +387,11 @@ a.cx:focus-visible{outline:2px solid var(--acc2);outline-offset:3px}
 .cx-go{margin-top:auto;pointer-events:none}
 @media(max-width:700px){.cx-grid{grid-template-columns:1fr}a.cx{padding:24px}}
 @media(prefers-reduced-motion:reduce){a.cx{transition:none}a.cx:hover{transform:none}}
+
+/* Plain-text versions of Resume and Experience for crawlers and no-JavaScript visitors; hidden once scripts run. */
+.js .seo-static{display:none}
+.seo-static h2{margin:0 0 .6em}
+.seo-static h3{margin:1.6em 0 .3em}
+.seo-static h4{margin:1.2em 0 .1em}
+.seo-static p,.seo-static li{max-width:72ch}
+.seo-static .meta{color:var(--mut);margin:0 0 .4em}

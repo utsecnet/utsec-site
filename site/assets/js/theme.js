@@ -1,6 +1,7 @@
 /* Theme: "dark" (default Neon Sunset) or "darker". Applied early from <head> so there is no flash. */
 (function () {
   var KEY = 'rj-theme', root = document.documentElement, cur = 'dark';
+  root.classList.add('js'); /* lets CSS hide the plain-text versions of the Resume and Experience pages */
   try { if (localStorage.getItem(KEY) === 'darker') { cur = 'darker'; } } catch (e) {}
   function apply(t) {
     cur = t === 'darker' ? 'darker' : 'dark';
