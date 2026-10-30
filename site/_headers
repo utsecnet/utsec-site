@@ -8,6 +8,10 @@
 /assets/img/*
   Cache-Control: public, max-age=2592000
 
+# Pages sends no content type for .ico files
+/favicon.ico
+  Content-Type: image/x-icon
+
 # Keep the pages.dev addresses out of search results; only www.utsec.net should be indexed.
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
